@@ -1,52 +1,60 @@
-# Gesture App
+# 🖐️ Gesture Lab
 
-A standalone gesture-driven interface prototype extracted from sara-porfolio-hub-.
+<div align="center">
+  <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/MediaPipe-00B4EB?style=for-the-badge&logo=mediapipe&logoColor=white" alt="MediaPipe" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+</div>
 
-## Product Requirements
+<br/>
 
-### Goal
-Build a self-contained gesture interaction demo that can be tested and tuned independently, then integrated into other experiences (e.g., Sara-s-hub-).
+> **The Thesis:** Touchscreens restrict how we interact with digital interfaces, limiting input to taps and swipes even as devices grow more capable. Users crave more natural, expressive interactions beyond glass and buttons.
 
-### Core Features
-- Camera hand-tracking input with on-screen preview.
-- Gesture recognition for wake, confirm, scroll, summon, dismiss.
-- Visual cursor mapped to hand position with configurable sensitivity and smoothing.
-- Gesture guild overlay (help UI) with clear iconography and descriptions.
-- Mouse fallback for interaction and toggles.
+**Gesture Lab** is an experimental frontend prototype exploring hands-as-input interactions. It serves as the foundational gesture-recognition engine that ultimately powers my immersive, gesture-controlled portfolio experience. 
 
-### User Flow
-1. User enables gesture mode.
-2. Camera preview shows hand tracking and current gesture state.
-3. User performs gestures to move the cursor and trigger actions.
-4. User can open the gesture guild to learn commands.
+---
 
-### Interaction Rules
-- Summon/confirm gestures trigger primary actions.
-- Dismiss gesture exits or cancels overlays.
-- Scroll gestures allow carousel/panel navigation.
-- Mouse remains a fallback when gestures are off.
+## 📸 Video Demo
+https://github.com/user-attachments/assets/5a31c939-1863-4731-8cc7-9622f05f2086
+---
 
-### Visual Requirements
-- On-brand, high-contrast UI with cinematic overlays.
-- Always-visible system status and gesture feedback.
-- Subtle motion that explains gestures without overwhelming the scene.
+## 🧠 Design Intent & Problem Space
 
-### Non-Goals
-- No backend services.
-- No long-term storage or auth.
+This lab was created to establish a reliable interaction language that can scale into real-world, camera-driven experiences. Through iterative testing, the gesture set was intentionally refined to prioritize:
+1. **Learnability:** Gestures that feel intuitive and mimic natural human movements.
+2. **Noise Resilience:** Ensuring the camera does not misinterpret casual hand movements.
+3. **Accessibility:** Providing a seamless mouse fallback for hybrid interaction.
 
-## Setup
+## 🔣 The Core Gesture Vocabulary
 
-1. Install dependencies:
-   ```bash
+Real-time camera input and hand tracking were utilized to map specific hand states to UI actions:
+
+* 🟢 **Wake:** Activates the tracking camera and initiates the on-screen cursor.
+* ↕️ **Scroll:** Hand tracking mapped to carousel or panel navigation.
+* ✋ **Summon:** A closing palm moving away from camerag(like grabbing) - pull up menus or hidden UI elements.
+* 💨 **Dismiss:** A palm opening and moving closer to the camera(like throwing) - sweeping motion to exit or cancel overlays.
+
+## 🛠 Technical Execution
+
+* **AI Vision Integration:** Integrated Google's **MediaPipe** to handle real-time hand-landmark detection via webcam.
+* **Custom Cursor Mapping:** Engineered JavaScript logic to translate 3D spatial coordinates from the camera into a smooth, 2D visual cursor on the DOM.
+* **State Management:** Built a robust event-listening system to track continuous gesture states (e.g., holding a pinch) versus discrete triggers (e.g., a single swipe).
+* **On-Screen Guidance:** Developed a cinematic "Gesture Guide" overlay with clear iconography to support user onboarding.
+
+## 🚀 Setup & Installation
+
+To run this experimental lab locally:
+
+1. Clone the repository and navigate to the project directory
+-  apps/gesture-lab
+2. Install dependencies:
+```bash
    npm install
    ```
-2. Start the dev server:
-   ```bash
+3. Start the dev server:
+
+```bash
    npm run dev
    ```
 
-## Notes
-
-- The repo mirrors `sara-porfolio-hub-` as a standalone project.
-- Tune gesture sensitivity in the gesture controller logic as needed.
