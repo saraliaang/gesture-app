@@ -16,9 +16,10 @@
 ---
 
 ## 📸 Video Demo
-https://github.com/user-attachments/assets/5a31c939-1863-4731-8cc7-9622f05f2086
----
 
+<video src="https://github.com/user-attachments/assets/5a31c939-1863-4731-8cc7-9622f05f2086.mp4" autoplay loop muted playsinline width="100%"></video>
+
+---
 ## 🧠 Design Intent & Problem Space
 
 This lab was created to establish a reliable interaction language that can scale into real-world, camera-driven experiences. Through iterative testing, the gesture set was intentionally refined to prioritize:
